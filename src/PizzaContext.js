@@ -11,7 +11,7 @@ export const usePizzaContext = () => useContext(PizzaContext);
 
 const PizzaProvider = ({ children }) => {
   const [menu, setMenu] = useState('pizza');
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState({username:'',fullName:''});
   const [cart, setCart] = useState([]);
   const [totalProductPrice, setTotalProductPrice] = useState('');
   const [product, setProduct] = useState([]);
