@@ -1,0 +1,62 @@
+@import 'base';
+
+.menu {
+  width: 80%;
+  margin: auto;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  flex-wrap: wrap;
+
+  .active {
+    background-color: #ffc014 !important;
+    .menu-title {
+      color: white !important;
+    }
+    .menu-open-btn {
+      background-color: white !important;
+    }
+  }
+
+  .menu-content {
+    padding: 1%;
+    width: 130px;
+    height: 30vh;
+    background-color: white;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
+
+    &:hover {
+      box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02),
+        0px 0px 5.3px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.035),
+        0px 0px 17.9px rgba(0, 0, 0, 0.042), 0px 0px 33.4px rgba(0, 0, 0, 0.05),
+        0px 0px 80px rgba(0, 0, 0, 0.07);
+    }
+
+    .menu-image {
+      aspect-ratio: 1/1;
+      width: 50%;
+      height: 11vh;
+      border-radius: 50%;
+    }
+
+    .menu-title {
+      font-family: 'Roboto Condensed', sans-serif;
+      font-size: 1rem;
+    }
+
+    .menu-open-btn {
+      width: 17px;
+      height: 17px;
+      padding: 5%;
+      background-color: $primary-color;
+      color: white;
+      border-radius: 50%;
+    }
+  }
+}

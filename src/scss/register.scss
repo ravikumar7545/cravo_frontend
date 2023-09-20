@@ -1,0 +1,86 @@
+@import 'base';
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lunasima&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Ysabeau+Infant:wght@500&display=swap');
+.register-box {
+  border-radius: 10px;
+  width: 28%;
+  height: 60vh;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  background-color: white;
+  padding: 2%;
+  align-items: center;
+  box-shadow: 0px 0px 1.1px rgba(0, 0, 0, 0.02),
+    0px 0px 2.5px rgba(0, 0, 0, 0.028), 0px 0px 4.8px rgba(0, 0, 0, 0.035),
+    0px 0px 8.5px rgba(0, 0, 0, 0.042), 0px 0px 15.9px rgba(0, 0, 0, 0.05),
+    0px 0px 38px rgba(0, 0, 0, 0.07);
+
+  h2 {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 2px;
+    font-size: 2rem;
+    text-decoration: underline;
+    text-decoration-color: $primary-color;
+  }
+
+  .label-box {
+    position: relative;
+    width: 95%;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    label {
+      font-family: 'Lunasima', sans-serif;
+      font-weight: 500;
+      font-size: 1.1rem;
+    }
+
+    .label-box-gif {
+      position: absolute;
+      left: 0%;
+      top: 55%;
+      width: 20px;
+      height: 20px;
+    }
+
+    input {
+      border: 0;
+      background: none;
+      outline: none;
+      letter-spacing: 2px;
+      font-family: 'Ubuntu', sans-serif;
+      font-size: 1.05rem;
+      border-bottom: 2px solid black;
+      padding-left: 10%;
+      padding-bottom: 2%;
+      font-weight: 600;
+    }
+  }
+  button {
+    background-color: $primary-color;
+    color: black;
+    padding: 2% 10%;
+    font-size: 1.1rem;
+    border-radius: 30px;
+  }
+  p {
+    margin: 0;
+    font-family: 'Ysabeau Infant', sans-serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+
+    > a {
+      color: black;
+    }
+  }
+}

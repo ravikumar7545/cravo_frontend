@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@700&display=swap');
+@import 'base';
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+// font-family: 'Oswald', sans-serif;
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@700&display=swap');
+.checkout-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw !important;
+  height: 100vh !important;
+  z-index: 12;
+  backdrop-filter: blur(3px);
+}
+
+.checkout-display-bar {
+  padding: 1%;
+  border-radius: 7px;
+  width: 90%;
+  height: 80vh;
+  background-color: white;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  // transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  box-shadow: 0px 0px 2.2px rgba(0, 0, 0, 0.02),
+    0px 0px 5.3px rgba(0, 0, 0, 0.028), 0px 0px 10px rgba(0, 0, 0, 0.035),
+    0px 0px 17.9px rgba(0, 0, 0, 0.042), 0px 0px 33.4px rgba(0, 0, 0, 0.05),
+    0px 0px 80px rgba(0, 0, 0, 0.07);
+
+  .close-icon {
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+  }
+
+  .checkout-navigation {
+    width: 19%;
+    height: 8vh;
+    margin-bottom: 0.5vh;
+    display: flex;
+    justify-content: space-between;
+
+    .checkout-navigation-box {
+      position: relative;
+      width: 30px;
+      height: 30px;
+      border: 10px solid #ffc014;
+      border-radius: 50%;
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      > p {
+        font-family: 'Barlow', sans-serif;
+        font-weight: 800;
+        font-size: 1.3rem;
+      }
+    }
+    #navigation-box-1::after,
+    #navigation-box-2::after {
+      content: '';
+      position: absolute;
+      right: -100%;
+      top: 10px;
+      width: 100%;
+      height: 10px;
+      background-color: #ffc014;
+    }
+    #navigation-box-2::before,
+    #navigation-box-3::before {
+      content: '';
+      position: absolute;
+      left: -100%;
+      top: 10px;
+      width: 100%;
+      height: 10px;
+      background-color: #ffc014;
+    }
+  }
+}
+
+.checkout-main-product-container {
+  margin-top: 20px;
+  display: grid;
+  width: 100%;
+
+  grid-template-columns: 1.45fr 0.55fr;
+  gap: 10px;
+
+  .checkout-product-box {
+    width: 99%;
+    height: 65vh;
+    overflow: hidden;
+    overflow-y: scroll;
+
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 5px;
+
+    &::-webkit-scrollbar {
+      width: 3px;
+    }
+    &::-webkit-scrollbar-track {
+      width: 5px;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: #ffc014;
+    }
+
+    .cart-product {
+      width: 100%;
+      height: 11vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 5px;
+      box-shadow: 0px 0px 0.1px rgba(0, 0, 0, 0.02),
+        0px 0px 0.3px rgba(0, 0, 0, 0.028), 0px 0px 0.6px rgba(0, 0, 0, 0.035),
+        0px 0px 1.1px rgba(0, 0, 0, 0.042), 0px 0px 2.1px rgba(0, 0, 0, 0.05),
+        0px 0px 5px rgba(0, 0, 0, 0.07);
+
+      .product-image {
+        width: 80px;
+        height: 60px;
+        object-fit: cover;
+        border-radius: 5px;
+      }
+
+      .cart-product-name {
+        width: 40%;
+        height: 10vh;
+        font-weight: 500;
+        font-family: 'Mukta', sans-serif;
+        font-family: 'Oswald', sans-serif;
+        font-size: 1.1rem;
+      }
+
+      .cart-product-counter {
+        width: 13%;
+        height: 10vh;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-family: 'Roboto Condensed', sans-serif;
+        font-weight: 600;
+
+        .cart-counter {
+          width: 25px;
+          height: 25px;
+          background-color: #ffc014;
+          border-radius: 6px;
+          cursor: pointer;
+          &:active {
+            transform: scale(0.9);
+          }
+        }
+      }
+
+      .cart-product-price {
+        font-family: 'Mukta', sans-serif;
+        font-size: 1.2rem;
+        > span {
+          font-size: 1.3rem;
+          color: $primary-color;
+        }
+      }
+
+      .remove_icon {
+        width: 30px;
+        height: 30px;
+        cursor: pointer;
+        &:active {
+          transform: scale(0.8);
+        }
+        &[disabled] {
+          pointer-events: none;
+        }
+      }
+    }
+  }
+}
+
+// font-family: 'Roboto Condensed', sans-serif;
+// font-weight: 600;
+// font-size: 1.1rem;
+
+.checkout-product-pricebox {
+  width: 100%;
+  padding: 5px;
+  height: 60vh;
+  display: flex;
+  flex-direction: column;
+
+  > h3 {
+    font-family: 'Montserrat', sans-serif;
+    margin: 0;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    text-underline-offset: 5px;
+  }
+
+  .checkout-product-total-price {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6vh;
+
+    border-bottom: 2px solid black;
+    margin-bottom: 1vh;
+  }
+  .price-container {
+    width: 95%;
+    height: 6vh;
+    margin: 0;
+    font-family: 'Roboto Condensed', sans-serif;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+
+    > span {
+      font-weight: 600;
+      font-size: 1.2rem;
+    }
+  }
+  .checkout-btn {
+    width: 60%;
+    margin: auto;
+    height: 6.5vh;
+    font-size: 1.2rem;
+    border-radius: 20px;
+    color: white;
+    background-color: $primary-color;
+    align-self: flex-end;
+
+    &:active {
+      transform: scale(0.9);
+    }
+  }
+}
