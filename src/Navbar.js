@@ -47,7 +47,6 @@ const Navbar = () => {
           if(user.username===''){
             toast.error('User need to login')
           }else{   
-            console.log(user)      
             setIsCheckoutDisplay(true)}} 
           }
           src={require('./images/cart.png')} alt="cart" />
