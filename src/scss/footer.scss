@@ -48,3 +48,16 @@
 .footer-details {
   font-size: 0.7rem;
 }
+
+@media screen and (max-width: 361px) {
+  .footer {
+    height: 47vh;
+
+    #footer-about,
+    #footer-links,
+    #footer-contact {
+      width: 90%;
+      height: auto;
+    }
+  }
+}

@@ -62,3 +62,9 @@
   width: 50%;
   font-family: 'Mukta', Consolas;
 }
+
+@media screen and (max-width: 361px) {
+  .adress-box {
+    width: 90%;
+  }
+}
