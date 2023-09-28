@@ -84,3 +84,28 @@
     }
   }
 }
+
+@media screen and (max-width: 361px) {
+  .register-box {
+    width: 90%;
+
+    .label-box {
+      label {
+        font-family: 'Lunasima', sans-serif;
+        font-weight: 800;
+        font-size: 1.1rem;
+      }
+      .label-box-gif {
+        position: absolute;
+        left: 0%;
+        top: 55%;
+        width: 25px;
+        height: 25px;
+      }
+
+      input {
+        font-size: 1.3rem;
+      }
+    }
+  }
+}
