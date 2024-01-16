@@ -4,10 +4,15 @@
   width: 80%;
   margin: auto;
   margin-top: 20px;
-  // height: 70vh;
+  min-height: 70vh;
   display: grid;
   grid-template-columns: repeat(auto-fill, 175px);
   gap: 30px;
+}
+
+.skeleton {
+  width: 10em !important;
+  line-height: 0.7 !important;
 }
 
 .product {

@@ -11,33 +11,32 @@ export const usePizzaContext = () => useContext(PizzaContext);
 
 const PizzaProvider = ({ children }) => {
   const [menu, setMenu] = useState('pizza');
-  const [user, setUser] = useState({username:'',fullName:''});
+  const [user, setUser] = useState({ username: '', fullName: '' });
   const [cart, setCart] = useState([]);
   const [totalProductPrice, setTotalProductPrice] = useState('');
   const [product, setProduct] = useState([]);
   const [isCheckoutDisplay, setIsCheckoutDisplay] = useState(false);
   const { showBoundary } = useErrorBoundary();
+  const [isProductLoading, setIsProductLoading] = useState(true);
 
   const fetchProduct = async () => {
-    try{
-
-  
-    const fetchAllProduct = await fetch(
-      `${process.env.REACT_APP_BACKEND_URL}/api/allProducts`
-    );
-    const fetchProductJson = await fetchAllProduct.json();
-    setProduct(fetchProductJson.allProducts);
-    }catch(err){
-      toast.error('Failed to fetch product')
+    try {
+      const fetchAllProduct = await fetch(
+        `${process.env.REACT_APP_BACKEND_URL}/api/allProducts`
+      );
+      const fetchProductJson = await fetchAllProduct.json();
+      setProduct(fetchProductJson.allProducts);
+      setIsProductLoading(false);
+    } catch (err) {
+      toast.error('Failed to fetch product');
       showBoundary(err);
     }
   };
 
   useEffect(() => {
-
-      fetchProduct();
-      // Fetching cart
-      fetchProductCart(showBoundary).then((data) => setCart(data));
+    fetchProduct();
+    // Fetching cart
+    fetchProductCart(showBoundary).then((data) => setCart(data));
 
     // Accessing previous logged in user
     if (localStorage.getItem('foody_token') !== null) {
@@ -73,6 +72,7 @@ const PizzaProvider = ({ children }) => {
         totalProductPrice,
         isCheckoutDisplay,
         setIsCheckoutDisplay,
+        isProductLoading,
       }}
     >
       {children}
